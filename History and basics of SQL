@@ -1,0 +1,37 @@
+* The Origin of SQL
+SQL- STRUCTURED QUERY LANGUAGE
+• Relational database Technology:
+---> Invented in the 1970's almost 50 years ago.
+---> Yet about 70% of datobages in Use in industry are relational
+---> Industry spent over $30 billion on relational datal Software (2020)
+---> SQL is one of the most in-demand tech skills in the Marketplace
+• where did so comes from?
+---> Back in 1970s, there was a mathematician. Dr. Edgar working for IBM published a paper describing how relation mathematics could be used to
+     store & process business data.
+---> Data is stored in TABLES ("relations")
+     He comes with an idea that we can store data in tables. Which are relations and those tables can be related to each other by keys that are 
+     within the primary & Foreign keys.
+---> SQL was initially developed at IBM by Donald Chamberlin and Raymond F. Boyce based on Codd's ideas.
+---> IBM began developing commercial relational database. Software products based on chamberlin & Raymond's work.
+    • The system R prototype.
+    • System /38, SQL/DS, & DB2, Commertially available 1979, 1981, and 1983 repectively.
+---> Relational software, INC. (Now Oracle corporation) leveraged the potential in the concept described by Codd, Chamberlin & Boyce.
+---> Developed their own SQL-based RDBMS.
+---> June 1979, Relational software introdured one of the First commercially available implementation of SQL Oracle V2 (version 2) for VAX computers.
+
+* The SQL standards
+
+---> SQL is a relatively simple language.
+---> SQL is a relatively powerfull language. 
+---> SQL developers refers to a SQL "program" as a "query".
+---> It is Not a procedural language.
+---> All inputs to a SQL query are tables.
+---> The output from a query is set another table called the Answer set.
+---> Some queries may produce Interim ( temporary) answer set.
+
+* Process of SQL
+1. Parse 
+2. Binds
+3. Executable
+4. Optimizer
+5. execution plan
