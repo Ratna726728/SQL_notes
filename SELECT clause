@@ -1,0 +1,73 @@
+---> Use bit.io website to practice database.
+---> It is using PostgreSQL database engine.
+
+* The Northwinds Database
+---> Sample relational database from microsoft.
+---> Northwinds purchases Food items ("products") from suppliers.
+---> Employees sell product to customer through orders.
+---> 8 tables in this database.
+
+* The Basic SELECT clause.
+---> The basic SELECT statement (Extracts date from a database).
+---> SYNTAX for SELECT clause
+      SELECT <Column 1>, <Column 2>, <Column 3>, <literal>, <expression>
+          FROM < table A >;
+---> Literal - A literal is an explicit numeric, character, string, or Boolean valve not represented by an identifier.
+    for example,
+Numeric literal = 113, String literal = 'hello world'
+Boolean = TRUE/FALSE
+
+# SELECT BASICS
+1. Commas are required, followed by blanks. 
+2. Place each clause on a separate line.
+3. Indent and vertically align.
+4. Semi-colon is required.
+---> The SELECT statement is used to select data from a database. The date returned is stored in a result table, called the result set.
+
+######### Querice for practice ###########
+
+SELECT * FROM "database"." employees";
+(returns all rows and all columns) 
+
+SELECT employeeid, lastname, firstname FROM "database"."employee"; 
+(returns selected columns)
+
+---> Expressions
+
+1. May be functions
+2. May be math.
+
+######### Queries for example and practice #############
+
+i) SELECT last name, firstname, hiredate, currentdate, date_part('month', hiredate)
+      FROM "database"."employees"; 
+
+ii) SELECT orderid, unitprice, quantity, Unitprice * Quantity AS "total Value"
+       FROM "database"."products";
+
+Function in (i) 
+date_part("month', hiredate)
+
+function in (ii)
+unitprice * quantity AS "total Value"
+where total value is alias of those two merged column.
+
+iii) SELECT lastname, firstname, TO_CHAR(hiredate, 'month') AS "Hire Month"
+         FROM "database"."employees"; 
+ 
+######## Concatenate character #################
+Concatenate character columns with,
+CONCAT (column 1, "literal", column 2)
+
+OR
+
+<column> || <column>
+<literal> || <literal>
+
+##### Queries for example and practice ########
+IV) SELECT CONCAT(firstname,' ',lastname) AS "Name" 
+       FROM "database"."employees";
+OR
+
+SELECT firstname || ' ' || lastname AS "Name" 
+    FROM "database"."employees";
