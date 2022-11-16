@@ -71,3 +71,16 @@ OR
 
 SELECT firstname || ' ' || lastname AS "Name" 
     FROM "database"."employees";
+    
+ *Comments   
+---> Comment out a line of code by prefixing it with "--" .
+
+SELECT CONCAT(firstname, lastname) AS "NAME" 
+-- this is concating the first and last name
+      FROM "database"."employees";
+---> Comment out several lines of code containing the lines within "/*" and  "*/"
+
+SELECT CONCAT(firstname, lastname) AS "NAME"
+/* this is concatening the first & lost name
+so that the names are combined */
+   FROM "database"."employees";
