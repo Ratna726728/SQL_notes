@@ -128,3 +128,15 @@ Write a query to insert this user in our database.
 ==>
 INSERT INTO PROFILE values('newton', 'Brand ambassador @ Newtons School', 'Issac Newton');
 
+17) Let us now write a query to let the user create a post on our platform. Write a query to create an entry into the table `post` with the following
+information: `username` is `newton`, `post_title` is `Intro to MYSQL`, `post_description` is `My First Post`. Note: This post does not contain any photo.
+==>
+INSERT INTO POST ('username', 'post_title', 'post_description') VALUES('newton', 'Intro to MYSQL', 'My First Post');
+
+18) A user was trying to signup on our portal such that the final query generated for his signup was as follows:
+INSERT INTO profile (username, full_name, headline) VALUES ('newton', 'Issac Newton', 'Scientist @ USA');
+But we were encountering the following error while running this query:
+Error: near line 51: UNIQUE constraint failed: profile. username
+Can you check and rectify the error?
+==>
+INSERT INTO profile (username, full_name, headline) VALUES ('newton2', 'Issac Newton', 'Scientist @ USA');
