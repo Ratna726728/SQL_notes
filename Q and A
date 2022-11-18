@@ -106,7 +106,8 @@ NUMBER_OF_LIKES INT,
 PHOTO BLOB
 );
 
-15) In the `PROFILE` table with fields (USERNAME VARCHAR(24) NOT NULL, FULL_NAME VARCHAR(72), HEADLINE VARCHAR (72)) the username and full_name both must be unique. But while creating a table with this constraint we faced the following error: no such column: NAME . Can you check and rectify the error. Below is the query used.
+15) In the `PROFILE` table with fields (USERNAME VARCHAR(24) NOT NULL, FULL_NAME VARCHAR(72), HEADLINE VARCHAR (72)) the username and full_name both must be unique. 
+But while creating a table with this constraint we faced the following error: no such column: NAME . Can you check and rectify the error. Below is the query used.
 CREATE TABLE PROFILE(
 USERNAME VARCHAR(24),
 FULL_NAME VARCHAR(72),
@@ -121,4 +122,9 @@ HEADLINE VARCHAR(72),
 UNIQUE(USERNAME, FULL_NAME )
 );
 
+16) We have to write a SQL query that will be used on the signup page of the platform. Let us assume a user is trying to
+create an account with the username as `newton`, heading as ‘Brand ambassador @ Newtons School’ and the full name ‘Issac Newton’. 
+Write a query to insert this user in our database.
+==>
+INSERT INTO PROFILE values('newton', 'Brand ambassador @ Newtons School', 'Issac Newton');
 
