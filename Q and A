@@ -1,0 +1,124 @@
+################################################################# DAY 1 ################################################################################
+
+1) List all the products in the Northwinds database showing product id, product name, product quantity per unit, unit prite, and Units in stock.
+
+SELECT productid, productname, quantityperunit, unitprice,unitsinstock
+
+   FROM "database"."products";
+
+2) For all employees at northwinds, list the first name & last name concated together with a blank space in between, and the year when they were hired.
+
+SELECT CONCAT(firstname, lastname) AS "NAME", hiredate, date_part('year',hiredate)
+FROM "database"."employees"; 
+
+3) For all products in the northwinds database, list the productname, unitprice, unitsinstock, and total value of the inventory of that product as"Total Value !!..
+SELECT productname, unitprice, unitsinstock, (unitsinstock * unitprice) AS "Total Value" 
+    FROM "database"."products";
+4) For all employess at northwinds, list the first name & lastname concatenated together with blank space in - 
+between with a column header "Name" and the name of the month (spelled out) for each employess birthday.
+SELECT CONCAT(firstname, lastname) AS "Name", birthdate, TO_CHAR(birthdate, 'month')
+     FROM "database"."employees";
+     
+####################################################################  DAY 2  #####################################################################################
+5) Create a basic table namely TEST_TABLE with 1 field TEST_FIELD as int.
+==> CREATE TABLE TEST_TABLE(TEST_FIELD INT);
+
+6) Let us start our journey by creating a 'PROFILE' table for storing the data of the users of our platform. Create a table 
+profile with 3 fields ( USERNAME VARCHAR (24), FULL_NAME VARCHAR (72), HEADLINE VARCHAR (72) ).
+==>
+CREATE TABLE PROFILE(
+USERNAME VARCHAR(24),
+FULL_NAME VARCHAR(72),
+HEADLINE VARCHAR(72)
+);
+
+7) Now let us create a table to store the post created by various users. Create a table POST with the 
+following fields (ID INT, USERNAME VARCHAR(24), POST_TITLE VARCHAR(72), POST_DESCRIPTION TEXT, DATETIME_CREATED DATETIME, NUMBER_OF_LIKES INT, PHOTO BLOB)
+==>
+CREATE TABLE POST(
+ID INT,
+USERNAME VARCHAR(24),
+POST_TITLE VARCHAR(72),
+POST_DESCRIPTION TEXT,
+DATETIME_CREATED TEXT,
+NUMBER_OF_LIKES INT,
+PHOTO BLOB
+);
+
+8) We were trying to add a `COMMENT` table to store the user comments on various posts. But we noobs were unable to do it,
+can you check our query and help us in solving the error here:
+Query: CREATE TABLE COMMENTS (
+USERNAME VARCHAR(24),
+COMMENT_TEXT TEXT,
+POST_ID INT;
+);
+Error: near line 1: near ";": syntax error
+Error: near line 5: near ")": syntax error
+==>
+CREATE TABLE COMMENTS (
+USERNAME VARCHAR(24),
+COMMENT_TEXT TEXT,
+POST_ID INT
+);
+
+9) Now that you are acquainted with a basic MySQL syntax so we need not the table `test_table`
+created in the first level. Delete the table `test_table`.
+==>
+DROP TABLE TEST_TABLE;
+
+10) Assuming that the database is SQLite, how can we list down all the tables present in the selected database?
+==>
+.tables
+
+11) There are times when you are clueless about what fields a table consist of. Assuming SQLite,
+write how will you see the description of the table `post`.
+==>
+pragma table_info('post')
+
+12)Since in the profile table, username must be unique. How to create a table `PROFILE` with 3
+fields (USERNAME VARCHAR (24), FULL_NAME (72), HEADLINE VARCHAR (72)) where the username should always be unique
+==>
+CREATE TABLE PROFILE(
+USERNAME VARCHAR(24) UNIQUE,
+FULL_NAME VARCHAR(72),
+HEADLINE VARCHAR(72)
+);
+
+13) In the `PROFILE` table the full name must not be null. So create a table `PROFILE` where username is unique 
+and fullname is not null having 3 fields (USERNAME VARCHAR (24), FULL_NAME (72), HEADLINE VARCHAR (72)).
+==>
+CREATE TABLE PROFILE(
+USERNAME VARCHAR(24) UNIQUE,
+FULL_NAME VARCHAR(72) NOT NULL, 
+HEADLINE VARCHAR(72)
+);
+
+14) The `POST` table should contain a field `ID` that can be used as the primary key. So make a table post with id 
+as primary key ( ID INT, USERNAME VARCHAR(24), POST_TITLE VARCHAR(72), POST_DESCRIPTION TEXT, DATETIME_CREATED DATETIME, NUMBER_OF_LIKES INT, PHOTO BLOB )
+==>
+CREATE TABLE POST(
+ID INT PRIMARY KEY,
+USERNAME VARCHAR(24),
+POST_TITLE VARCHAR(72),
+POST_DESCRIPTION TEXT,
+DATETIME_CREATED DATETIME,
+NUMBER_OF_LIKES INT,
+PHOTO BLOB
+);
+
+15) In the `PROFILE` table with fields (USERNAME VARCHAR(24) NOT NULL, FULL_NAME VARCHAR(72), HEADLINE VARCHAR (72)) the username and full_name both must be unique. But while creating a table with this constraint we faced the following error: no such column: NAME . Can you check and rectify the error. Below is the query used.
+CREATE TABLE PROFILE(
+USERNAME VARCHAR(24),
+FULL_NAME VARCHAR(72),
+HEADLINE VARCHAR(72),
+UNIQUE(USERNAME, NAME )
+);
+==>
+CREATE TABLE PROFILE(
+USERNAME VARCHAR(24),
+FULL_NAME VARCHAR(72),
+HEADLINE VARCHAR(72),
+UNIQUE(USERNAME, FULL_NAME )
+);
+
+
